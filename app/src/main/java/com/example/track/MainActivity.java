@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
             latValue.setText(gpsBundle.getString(Constants.LATITUDE));
             logValue.setText(gpsBundle.getString(Constants.LONGITUDE));
             speedValue.setText(gpsBundle.getString(Constants.SPEED));
-            altitudeValue.setText(gpsBundle.getString(Constants.ALTITUDE));
+            altValue.setText(gpsBundle.getString(Constants.ALTITUDE));
         }
     };
 
     //TODO private long startTime, endTime;
     private Button startBttn, stopBtn, pauseBtn;
-    private TextView durationValue, speedValue, latValue, logValue, altitudeValue;
+    private TextView elapsedValue, speedValue, latValue, logValue, altValue;
     private final static int REQUEST_CODE_LOCATION_PERMISSION = 1;
 
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Log.d(TAG, "startBttn clicked: Starting Location Service");
                     startLocationService();
-                    startBttn.setVisibility(View.INVISIBLE);
+                    startBttn.setVisibility(View.GONE);
                     stopBtn.setVisibility(View.VISIBLE);
                     pauseBtn.setVisibility(View.VISIBLE);
                 }
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "stopBtn click listener: Stopping Location Service");
                     stopLocationService();
                     startBttn.setVisibility(View.VISIBLE);
-                    stopBtn.setVisibility(View.INVISIBLE);
-                    pauseBtn.setVisibility(View.INVISIBLE);
+                    stopBtn.setVisibility(View.GONE);
+                    pauseBtn.setVisibility(View.GONE);
                 } else {
                     Log.d(TAG, "stopBtn click listener: Not stopping Location Service because its not running");
                 }
@@ -113,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
         speedValue = findViewById(R.id.speedValue);
         latValue = findViewById(R.id.latitudeValue);
         logValue = findViewById(R.id.longitudeValue);
-        durationValue = findViewById(R.id.elapsedValue);
-        altitudeValue = findViewById(R.id.altitudeValue);
+        elapsedValue = findViewById(R.id.elapsedValue);
+        altValue = findViewById(R.id.altitudeValue);
     }
 
 

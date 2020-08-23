@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/altitudeTextView"
@@ -27,7 +22,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="right|center_vertical"
+        android:gravity="end|center_vertical"
         android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/latitudeValue" />
@@ -47,7 +42,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="right|center_vertical"
+        android:gravity="end|center_vertical"
         android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/longitudeValue" />
@@ -66,7 +61,7 @@
         android:id="@+id/elapsedValue"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:gravity="right|center_vertical"
+        android:gravity="end|center_vertical"
         android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/elapsedTextView" />
@@ -86,7 +81,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="right|center_vertical"
+        android:gravity="end|center_vertical"
         android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/elapsedValue" />
@@ -106,39 +101,65 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="right|center_vertical"
+        android:gravity="end|center_vertical"
         android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/speedValue" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#DD317E"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/startBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/stopBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stop"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/stopBtn"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/my_button"
+            android:text="@string/stop"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
-    <Button
-        android:id="@+id/pauseBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pause"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/startBtn"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/my_button"
+            android:text="@string/start"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
+        <Button
+            android:id="@+id/pauseBtn"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/my_button"
+            android:text="@string/pause"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
