@@ -26,12 +26,15 @@ import java.text.DecimalFormat;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
+/**
+ * A location service which retrieves latitude, longitude, altitude and speed asynchronously from
+ * {@link LocationRequest} at set interval of {@value UPDATE_LOCATION_INTERVAL}.
+ */
 public class LocationServices extends Service {
-    // Responsible for retrieving the location
-//    private FusedLocationProviderClient mFusedLPClient;
+
     private static final DecimalFormat df = new DecimalFormat("#.00");
     private static final String TAG = "LocationServices";
-    private static final long UPDATE_LOCATION_INTERVEL = 1000 * 2;
+    private static final long UPDATE_LOCATION_INTERVAL = 1000 * 2;
     private static final long SHORT_INTERVAL = 1000;
     private LocationCallback locationCallBack = new LocationCallback() {
         @Override
@@ -59,6 +62,9 @@ public class LocationServices extends Service {
     };
 
 
+    /**
+     * Start the location service in foreground for continues update.
+     */
     private void startLocationServiceHelper() {
         final String CHANNEL_ID = "my_channel_01";
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -85,25 +91,25 @@ public class LocationServices extends Service {
         // LocationRequest is used to constantly retrieving the location with a set interval
         LocationRequest locationRequest = new LocationRequest();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(UPDATE_LOCATION_INTERVEL);
+        locationRequest.setInterval(UPDATE_LOCATION_INTERVAL);
         locationRequest.setFastestInterval(SHORT_INTERVAL);
 
         FusedLocationProviderClient fusedLPClient = new FusedLocationProviderClient(this);
         fusedLPClient.requestLocationUpdates(locationRequest, locationCallBack, Looper.getMainLooper());
 
-        // same as above
-        // com.google.android.gms.location.LocationServices.getFusedLocationProviderClient(this).requestLocationUpdates(locationRequest, locationCallBack, Looper.getMainLooper());
-
         Log.i(TAG, "User has proper location permissions");
-
         startForeground(175, notificationBuilder.build());
     }
 
+
+    /**
+     * Terminates the location service.
+     */
     private void stopLocationService() {
         com.google.android.gms.location.LocationServices.getFusedLocationProviderClient(this).removeLocationUpdates(locationCallBack);
         stopForeground(true);
         stopSelf();
-        Log.i(TAG, "stopLocationService: Stopped Location Service");
+        Log.d(TAG, "stopLocationService: Stopped Location Service");
     }
 
     @Nullable
@@ -129,9 +135,6 @@ public class LocationServices extends Service {
                 }
             }
         }
-        // The OS will not recreate this service after it is killed.
-        // return START_NOT_STICKY;
-
         return super.onStartCommand(intent, flag, startId);
     }
 }

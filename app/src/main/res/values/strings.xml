@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Track</string>
+    <string name="altitude">Altitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="speed">Speed</string>
+    <string name="elapsed">Elapsed</string>
+    <string name="empty_value">Location Disabled</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+
 </resources>

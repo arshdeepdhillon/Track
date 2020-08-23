@@ -1,5 +1,10 @@
 package com.example.track.constants;
 
+import com.example.track.R;
+
+/**
+ * Common constants used by the application.
+ */
 public class Constants {
     public static final String LATITUDE = "latitude";
     public static final String LONGITUDE = "longitude";

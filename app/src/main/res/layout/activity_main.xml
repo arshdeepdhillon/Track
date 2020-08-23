@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
-        android:text="Altitude"
+        android:text="@string/altitude"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/latitudeTextView" />
 
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="right|center_vertical"
-        android:text="-"
+        android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/latitudeValue" />
 
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
-        android:text="Latitude"
+        android:text="@string/latitude"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/longitudeTextView" />
 
@@ -48,28 +48,28 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="right|center_vertical"
-        android:text="-"
+        android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/longitudeValue" />
 
     <TextView
-        android:id="@+id/durationTextView"
+        android:id="@+id/elapsedTextView"
         android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:gravity="center_vertical"
-        android:text="Duration"
+        android:text="@string/elapsed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/durationValue"
+        android:id="@+id/elapsedValue"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:gravity="right|center_vertical"
-        android:text="-"
+        android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/durationTextView" />
+        app:layout_constraintTop_toTopOf="@+id/elapsedTextView" />
 
     <TextView
         android:id="@+id/speedTextView"
@@ -77,9 +77,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
-        android:text="Speed"
+        android:text="@string/speed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/durationTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/elapsedTextView" />
 
     <TextView
         android:id="@+id/speedValue"
@@ -87,9 +87,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="right|center_vertical"
-        android:text="-"
+        android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/durationValue" />
+        app:layout_constraintTop_toBottomOf="@+id/elapsedValue" />
 
     <TextView
         android:id="@+id/longitudeTextView"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
-        android:text="Longitude"
+        android:text="@string/longitude"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/speedTextView" />
 
@@ -107,7 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="right|center_vertical"
-        android:text="-"
+        android:text="@string/empty_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/speedValue" />
 
@@ -116,7 +116,7 @@
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
+        android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -126,7 +126,7 @@
         android:id="@+id/stopBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stop"
+        android:text="@string/stop"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -135,7 +135,7 @@
         android:id="@+id/pauseBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pause"
+        android:text="@string/pause"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
